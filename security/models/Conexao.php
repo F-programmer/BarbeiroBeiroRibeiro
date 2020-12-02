@@ -9,7 +9,7 @@ class Conexao
 			"mysql:host=localhost;dbname=bdbarbearia",
 			"root",
 			""
-		);
+		); 
 
 		$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$conexao->exec("SET CHARACTER SET utf8");

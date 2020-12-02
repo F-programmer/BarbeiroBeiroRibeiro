@@ -2,7 +2,6 @@ body {
 	background-image: url('../../../../src/assets/cadastro_Wallpaper3.jpg');
 	background-attachment: fixed;
 	background-size: cover;
-
 	overflow: hidden;
 }
 
@@ -19,7 +18,7 @@ main{
 main #cadastro{
 	margin-top: 5%;
 	width: 40%;
-	height: 70%;
+	height: 85%;
 	background: #fff;
 	border-radius: 10px;
 }

@@ -1,9 +1,9 @@
 <?php
 class Imagen
 {
-	private String $nome;
-	private String $url;
-	private String $descricao;
+	private $nome;
+	private $url;
+	private $descricao;
 
 	public function setNome($nome)
 	{
@@ -64,7 +64,7 @@ class Imagen
 		$item = $lastIdServico->fetchAll();
 
 		$stmt = $connection->prepare(
-			"INSERT INTO tbServicoImagen(idServico, idImagen)
+			"INSERT INTO tbServicoImagen(idServico, idImagem)
 			VALUES(?, ?)
 		");
 		$stmt->bindValue(1, $idServico);
@@ -73,3 +73,5 @@ class Imagen
 		return $stmt->execute();
 	}
 }
+
+

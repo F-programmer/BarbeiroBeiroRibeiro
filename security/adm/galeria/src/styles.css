@@ -1,11 +1,11 @@
 body {
 	font-family: monospace;
-	color: #333;
+	background-color: white;
 	overflow-x: hidden;
 }
 #titulo {
 	text-align: center;
-	color: whitesmoke;
+	color: black;
 	margin-top: 3%;
 	margin: 20px 0 0 0;
 	font-size: 2.05em;
@@ -13,9 +13,8 @@ body {
 }
 .galeria-container {
 	width: 100%;
-	height: calc(100vh * 1.5);
-	margin: none;
-
+	height: auto;
+	margin-bottom: 15px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -23,34 +22,42 @@ body {
 }
 .galeria-itens {
 	width: calc(100vw - 4rem);
-	height: 100%;
-
+	height: auto;
 	display: flex;
 	flex-wrap: wrap;
 
-	background-color: #777;
 }
 
 .item-container {
 	width: 50%;
-	max-height: 30%;
-	min-height: 20%;
-
+	height: 300px;
 	padding: .5rem;
-
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
 .item-container .img {
+	overflow: hidden;
 	border-left: 5px solid var(--secondary);
 	border-top: 5px solid var(--secondary);
 	border-bottom: 5px solid var(--secondary);
 }
 
 .item-container .img img{
+	max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 	width: 100%;
 	height: 100%;
+}
+
+.item-container .img:hover .item{
+	-moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+
+
 }
 
 .item-container .item-titulo {
@@ -73,7 +80,7 @@ body {
 
 	color: var(--text-color);
 
-	background: radial-gradient(var(--background) 60%, var(--secondary));
+	background: radial-gradient(var(--background) 90%, var(--secondary));
 }
 .item-titulo .titulo span{
 	font-size: 15px;
