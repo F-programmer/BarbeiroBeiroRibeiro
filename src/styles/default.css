@@ -1,0 +1,31 @@
+:root{
+  --primary: #444444;
+  --secondary: #331100;
+  --terciary: #FC2032;
+  --background: #191622;
+  --text-color: #FFFFFF;
+}
+
+*{
+	font-family: Poppins;
+  box-sizing: border-box;
+}
+
+body{
+  box-sizing: border-box;
+  background-color: #191622;
+}
+
+input, button, select{
+	outline: none;
+	border: none;
+}
+
+div{
+	display: block;
+}
+
+.page{
+  width: 100%;
+  height: 100%;
+}

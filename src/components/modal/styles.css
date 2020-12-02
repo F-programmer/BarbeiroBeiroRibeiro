@@ -1,0 +1,64 @@
+#animatedModal{
+	background: var(--background) !important;
+}
+
+#btn-close-modal{
+  cursor: pointer;
+  font-size: 50px;
+  margin-top: 20px;
+  text-align: center;
+  color:#fff;
+}
+
+#btn-close-modal label{
+  cursor: pointer;
+  display: block;
+}
+
+#btn-close-modal label i{
+  transform: rotate(0deg);
+  transition: .3s;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  padding: 1%;
+}
+
+#btn-close-modal label i:hover{
+  transform: rotate(90deg);
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(90deg);
+  }
+}
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+  font-family: Poppins;
+  color: #fff;
+  line-height: 45px;
+}
+
+.modal-content h3{
+  font-size: 30px;
+}
+
+#modal button{
+	cursor: pointer;
+	font-size: 20px;
+	padding: 10px;
+	font-family: "Poppins";
+	color: #fff;
+	background: var(--terciary);
+	border-radius: 5px;
+}

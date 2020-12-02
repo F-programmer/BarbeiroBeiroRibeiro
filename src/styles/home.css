@@ -1,0 +1,80 @@
+main {
+	width: 100%;
+	height: 100vh;
+
+	display: inline-flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	/* align-items: center; */
+
+	background-color: var(--background);
+}
+
+main section {
+	width: 100%;
+	height: 80%;
+}
+
+.paralax {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  background-image: url("./../assets/nando.png");
+  filter: contrast(1.5)  opacity(.5) saturate(1.5);
+}
+
+.paralax::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .2;
+  position: absolute;
+  z-index: -1;
+}
+
+.content-paralax{
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 2fr 1fr;
+	grid-template-areas: "logo logo" "texto texto" "buttons buttons";
+	color: var(--text-color);
+}
+
+.content-paralax .svg{
+	grid-area: logo;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.content-paralax .svg svg{
+	transform: scale(4);
+}
+
+.content-paralax .texto{
+	grid-area: texto;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.content-paralax .texto h3{
+	font-size: 40px;
+	font-weight: bolder;
+	font-family: Poppins;
+	color: var(--terciary);
+}
+
+.content-paralax .texto h4{
+	font-size: 25px;
+	font-family: Ovo;
+	color: #ffffff;
+}

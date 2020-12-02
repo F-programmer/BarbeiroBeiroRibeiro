@@ -1,0 +1,144 @@
+.carrousel {
+	display: flex;
+	flex-direction: column;
+}
+
+.carrousel-container {
+	width: 100%;
+	height: 350px;
+	background-color: var(--background);
+
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-areas: "botao1 conteudo botao2";
+}
+
+.carrousel-container .btn-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.carrousel-container .btn-container label{
+	width: 50px;
+	height: 50px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	background: #000;
+	color: var(--text-color);
+	font-size: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.carrousel-container .btn-container label:hover{
+	opacity: .7;
+}
+
+.carrousel-container .btn-container:first-child label{
+	transform: rotate(-90deg);
+}
+
+.carrousel-container .btn-container:last-child label{
+	transform: rotate(90deg);
+}
+
+.carrousel-container .btn-container:first-child {
+	grid-area: botao1;
+}
+
+.carrousel-container .btn-container:last-child {
+	grid-area: botao2;
+}
+
+.carrousel-container .itens-container {
+	grid-area: conteudo;
+}
+
+.carrousel-container .itens-container .item {
+	width: 100%;
+	height: 100%;
+
+	/* display: grid; */
+	display: none;
+	grid-template-columns: 1fr;
+	grid-template-rows: 4fr 2fr 1fr;
+	grid-template-areas: "line1" "line2" "line3";
+	/* grid-template-areas: "line1 line2 line3"; */
+	text-align: center;
+}
+
+.line1{
+	width: 100%;
+	grid-area: line1;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.line2{
+	grid-area: line2;
+}
+
+.line3{
+	grid-area: line3;
+}
+
+.item .icon-item{
+	font-size: 50px;
+	transform: scale(1.5);
+	color: var(--text-color);
+}
+
+.item h4{
+	font-size: 20px;
+	color: var(--primary);
+	font-family: Ovo;
+	font-style: oblique;
+	text-overflow: ellipsis;
+	text-align: justify;
+
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.to-left{
+	animation: slide-left 1s;
+}
+
+.to-right{
+	animation: slide-right 1s;
+}
+
+@keyframes slide-left{
+	0%{
+		transform: translateX(100px);
+		opacity: 0;
+	}
+
+	100%{
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-right{
+	0%{
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+
+	100%{
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
