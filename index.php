@@ -33,7 +33,7 @@
 				<ul>
 					<li class='active'><a href="./">Home</a></li>
 					<li><a href="./pages/login/login.php">Login</a></li>
-					<li><a href="#">Cadastro</a></li>
+					<li><a href="./pages/galeria/index.php">Galeria</a></li>
 				</ul>
 			</nav>
 		</header>

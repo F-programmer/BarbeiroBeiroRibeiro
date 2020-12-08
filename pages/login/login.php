@@ -50,7 +50,7 @@
 				<ul>
 					<li><a href="./../../index.php">Home</a></li>
 					<li class='active'><a href="./">Login</a></li>
-					<li><a href="../cadastro/cadastro.php">Cadastro</a></li>
+					<li><a href="../galeria/index.php">Galeria</a></li>
 				</ul>
 			</nav>
 		</header>

@@ -2,8 +2,8 @@
 
 use function PHPSTORM_META\map;
 
-include_once('../../utils/sentinel.php');
-require_once '../../utils/autoloader.php';
+//include_once('../../utils/sentinel.php');
+require_once '../../security/utils/autoloaderGaleria.php';
 ?>
 
 <html>
@@ -18,11 +18,11 @@ require_once '../../utils/autoloader.php';
 	<script src="https://kit.fontawesome.com/326a212606.js" crossorigin="anonymous"></script>
 
 	<!-- styles -->
-	<link rel="stylesheet" href="../../../src/styles/reset.css" />
-	<link rel="stylesheet" href="../../../src/styles/default.css" />
-	<link rel="stylesheet" href="../../../src/components/menu/style.css" />
-	<link rel="stylesheet" href="../../../src/components/modal/animate.min.css" />
-	<link rel="stylesheet" href="../../../src/components/modal/styles.css" />
+	<link rel="stylesheet" href="../../src/styles/reset.css" />
+	<link rel="stylesheet" href="../../src/styles/default.css" />
+	<link rel="stylesheet" href="../../src/components/menu/style.css" />
+	<link rel="stylesheet" href="../../src/components/modal/animate.min.css" />
+	<link rel="stylesheet" href="../../src/components/modal/styles.css" />
 
 	<link rel="stylesheet" href="./src/styles.css" />
 
@@ -34,38 +34,15 @@ require_once '../../utils/autoloader.php';
 
 <body>
 
-	<a id="demo01" href="#animatedModal"></a>
-
-	<div id="animatedModal">
-		<!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
-		<div id="btn-close-modal" class="close-animatedModal">
-			<label id="fechar-modal"><i class="fas fa-times-circle"></i></label>
-		</div>
-
-		<div id="modal" class="modal-content">
-			<!--Your modal content goes here-->
-		</div>
-	</div>
-
-	<?php
-	echo ('<script>
-		// atribuindo o efeito ao modal
-		$("#demo01").animatedModal();
-	</script>');
-	?>
-
 	<header>
 		<nav>
 			<div class="title-page">
-				<img src="./../../../src/assets/bigode.svg" alt="" />
+				<img src="../../src/assets/bigode.svg" alt="" />
 			</div>
 			<ul>
-				<li><a href="./../home/index.php">Home</a></li>
-				<li><a href="../cadastroCliente/index.php">Cliente</a></li>
-				<li><a href="../cadastroServico/index.php">Serviço</a></li>
-				<li><a href="../cadastroImagen/index.php">Imagens</a></li>
-				<li class='active'><a href="../galeria/index.php">Galeria</a></li>
-				<li><a href="../../utils/logout.php">Sair</a></li>
+				<li><a href="../../index.php">Home</a></li>
+				<li><a href="../login/login.php">Login</a></li>
+				<li class='active'><a href="../cadastroServico/index.php">Galeria</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -86,7 +63,7 @@ require_once '../../utils/autoloader.php';
 
 					. '<div class="img">'
 
-					. '<img src="../../../'
+					. '<img src="../../'
 					. $item['urlImagem'] . '/' . $item['nomeImagem'] . '"'
 					. ' alt ="' . $item['descImagem'] . '"'
 					. ' title ="' . $item['descImagem'] . '"'
