@@ -58,23 +58,59 @@ class Cliente
 		$this->foneCliente = $foneCliente;
 	}
 
-	public function cadastrar($cliente)
+	public function __construct(
+		$nomeCliente,
+		$cpfCliente,
+		$emailCliente,
+		$foneCliente
+	) {
+		$this->idCliente = 0;
+		$this->nomeCliente = $nomeCliente;
+		$this->cpfCliente = $cpfCliente;
+		$this->emailCliente = $emailCliente;
+		$this->foneCliente = $foneCliente;
+	}
+
+	public function cadastrar()
 	{
-		$conexao = Conexao::pegarConexao();
+		$connection = Conexao::pegarConexao();
 
-		$stmt = $conexao->prepare(
-			"INSERT INTO tbcliente (nomecliente, cpfCliente, emailCliente, foneCliente)
-			VALUES(?,?,?,?)
-			");
+		$stmt = $connection->prepare(
+			"INSERT INTO tbcliente (nomecliente, cpfCliente, emailCliente)
+			VALUES(?,?,?)
+			"
+		);
 
-		$stmt->bindValue(1, $cliente->getNomeCliente());
-		$stmt->bindValue(2, $cliente->getCpfCliente());
-		$stmt->bindValue(3, $cliente->getEmailCliente());
-		$stmt->bindValue(4, $cliente->getFoneCliente());
-		$stmt->execute();
 
-		return 'Cadastro realizado com sucesso';
+		$stmt->bindValue(1, $this->getNomeCliente());
+		$stmt->bindValue(2, $this->getCpfCliente());
+		$stmt->bindValue(3, $this->getEmailCliente());
+		$results = $stmt->execute();
+
+		if ($results == 1) {
+			$query = $connection->query("SELECT MAX(idCliente) FROM tbcliente");
+			$idCliente = $query->fetchAll()[0][0];
+
+			return $this->cadastrarTelefone($idCliente);
+		}
+
+		return false;
+	}
+
+	public function cadastrarTelefone($idCliente)
+	{
+		$connection = Conexao::pegarConexao();
+		$stmt = $connection->prepare(
+			"INSERT INTO tbTelefoneCliente (idCliente, numTelefone)
+			VALUES(?,?)
+			"
+		);
+
+		$stmt->bindValue(1, $idCliente);
+		$stmt->bindValue(2, $this->foneCliente);
+
+		$results =  $stmt->execute();
+
+		return $results == 1 ? true : false;
 	}
 }
-
-

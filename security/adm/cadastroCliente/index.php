@@ -1,8 +1,4 @@
 <?php
-header("Location: ../home/");
-?>
-
-<?php
 include_once('../../utils/sentinel.php');
 ?>
 
@@ -155,7 +151,7 @@ include_once('../../utils/sentinel.php');
 
   <?php
 	if (isset($_GET['cli_cad'])) {
-		if ($_GET['cli_cad']) {
+		if ($_GET['cli_cad'] === true) {
 			echo ('<script>
 				$("#modal").append(
 					"<h3>Cliente Cadastrado!</h3>"
