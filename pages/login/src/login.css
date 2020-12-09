@@ -181,3 +181,18 @@ main #login form fieldset input:focus::placeholder {
 		padding-bottom: 2rem;
 	}
 }
+
+@media screen and (min-height: 1000px) {
+	main #login {
+		width: 80%;
+	}
+
+	main #login form fieldset label,
+	main #login form fieldset input {
+		font-size: 30px;
+	}
+
+	#btn button {
+		font-size: 45px;
+	}
+}
