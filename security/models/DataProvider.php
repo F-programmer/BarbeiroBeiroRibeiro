@@ -24,7 +24,7 @@ class DataProvider {
 			 tbServico.descricaoServico
 			 FROM tbImagens
 				INNER JOIN tbServicoImagen
-					ON tbImagens.idImagem = tbServicoImagen.idImagem
+					ON tbImagens.idImagem = tbServicoImagen.idImagen
 						INNER JOIN tbServico
 							ON tbServicoImagen.idServico = tbServico.idServico
 								GROUP BY tbImagens.nomeImagem
