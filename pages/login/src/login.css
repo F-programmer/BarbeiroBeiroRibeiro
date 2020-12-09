@@ -6,7 +6,7 @@ body {
 	overflow: hidden;
 }
 
-main{
+main {
 	width: 100%;
 	height: calc(100% - 100px);
 
@@ -16,25 +16,25 @@ main{
 	align-items: center;
 }
 
-main #login{
+main #login {
 	width: 40%;
 	height: 70%;
 	background: #fff;
 	border-radius: 5%;
 }
 
-main #login form{
+main #login form {
 	width: 100%;
 	height: 100%;
 	padding: 10px;
 
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 }
 
-main #login form header{
+main #login form header {
 	width: 100%;
 	height: auto;
 	background: none;
@@ -50,25 +50,25 @@ main #login form header{
 	align-items: center;
 }
 
-main #login form header h3{
+main #login form header h3 {
 	font-size: 40px;
 	font-weight: bolder;
 }
 
-main #login form fieldset{
+main #login form fieldset {
 	width: 100%;
 	border: none;
 	display: flex;
 	flex-direction: column;
 }
 
-main #login form fieldset label{
+main #login form fieldset label {
 	font-size: 20px;
 	color: var(--background);
 	margin-bottom: 10px;
 }
 
-main #login form fieldset input{
+main #login form fieldset input {
 	width: 100%;
 	font-size: 20px;
 	border: none;
@@ -76,42 +76,42 @@ main #login form fieldset input{
 	padding-left: 10px;
 }
 
-main #login form fieldset input:focus::placeholder{
+main #login form fieldset input:focus::placeholder {
 	visibility: hidden;
 }
 
-#btn{
+#btn {
 	width: 100%;
-	display:flex;
+	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	margin-bottom: 10px;
 }
 
-#btn button{
+#btn button {
 	padding: 10px;
 	color: var(--text-color);
 	border-radius: 5%;
 	border: 3px solid;
 	cursor: pointer;
-	transition: .3s;
+	transition: 0.3s;
 }
 
-#btn button:hover{
-	opacity: .7;
+#btn button:hover {
+	opacity: 0.7;
 }
 
-#btn button:first-child{
+#btn button:first-child {
 	background: var(--terciary);
 	border-color: var(--terciary);
 }
 
-#btn button:last-child{
+#btn button:last-child {
 	background: var(--primary);
 	border-color: var(--primary);
 }
 
-.acces-denied{
+.acces-denied {
 	animation: no-no 300ms linear, fade paused;
 }
 
@@ -133,15 +133,15 @@ main #login form fieldset input:focus::placeholder{
 	}
 }
 
-.red-placeholder::placeholder{
+.red-placeholder::placeholder {
 	color: var(--terciary);
 }
 
-.pseudo{
+.pseudo {
 	border: none !important;
 }
 
-.pseudo-field{
+.pseudo-field {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
@@ -149,17 +149,35 @@ main #login form fieldset input:focus::placeholder{
 	border-bottom: 2px solid var(--primary);
 }
 
-#btn-pass{
+#btn-pass {
 	margin-right: 20px;
 	cursor: pointer;
 }
 
-#btn-pass i::before{
+#btn-pass i::before {
 	font-size: 30px;
 	color: var(--background);
 }
 
-.no-visible::before{
-	content: '\f070';
+.no-visible::before {
+	content: "\f070";
 	font-family: FontAwesome;
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+
+	main {
+		width: 100%;
+		min-height: 500px;
+	}
+
+	main #login {
+		width: 80%;
+		height: 80%;
+		padding-bottom: 2rem;
+	}
 }
