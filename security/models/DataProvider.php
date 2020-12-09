@@ -21,13 +21,13 @@ class DataProvider {
 			 nomeImagem,
 			 urlImagem,
 			 descImagem,
-			 tbServico.descricaoServico
-			 FROM tbImagens
-				INNER JOIN tbServicoImagen
-					ON tbImagens.idImagem = tbServicoImagen.idImagem
-						INNER JOIN tbServico
-							ON tbServicoImagen.idServico = tbServico.idServico
-								GROUP BY tbImagens.nomeImagem
+			 tbservico.descricaoServico
+			 FROM tbimagens
+				INNER JOIN tbservicoimagen
+					ON tbimagens.idImagem = tbservicoimagen.idImagem
+						INNER JOIN tbservico
+							ON tbservicoimagen.idServico = tbservico.idServico
+								GROUP BY tbimagens.nomeImagem
 								");
 		$result = array();
 		foreach ($query->fetchAll() as &$item) {
