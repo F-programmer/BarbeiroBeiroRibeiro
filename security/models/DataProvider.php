@@ -41,4 +41,3 @@ class DataProvider {
 		return $result;
 	}
 }
-?>
