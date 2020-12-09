@@ -44,6 +44,7 @@ require_once '../../security/utils/autoloaderGaleria.php';
         <li><a href="../../index.php">Home</a></li>
         <li><a href="../login/login.php">Login</a></li>
         <li class='active'><a href="../cadastroServico/index.php">Galeria</a></li>
+        <li><a href="../agendamento/index.php">Fazer Agendamento</a></li>
       </ul>
     </nav>
   </header>

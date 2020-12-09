@@ -51,6 +51,7 @@
 					<li><a href="./../../index.php">Home</a></li>
 					<li class='active'><a href="./">Login</a></li>
 					<li><a href="../galeria/index.php">Galeria</a></li>
+					<li><a href="../agendamento/index.php">Fazer Agendamento</a></li>
 				</ul>
 			</nav>
 		</header>

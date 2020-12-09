@@ -58,9 +58,9 @@ require_once '../../security/models/Conexao.php';
         </div>
         <ul>
           <li><a href="./../../index.php">Home</a></li>
-          <li><a href="./">Login</a></li>
+          <li><a href="../login/login.php">Login</a></li>
           <li><a href="../galeria/index.php">Galeria</a></li>
-          <li class='active'><a href="./pages/agendamento/index.php">Fazer Agendamento</a></li>
+          <li class='active'><a href="#">Fazer Agendamento</a></li>
         </ul>
       </nav>
     </header>

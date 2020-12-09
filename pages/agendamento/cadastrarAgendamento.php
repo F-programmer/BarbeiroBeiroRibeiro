@@ -12,7 +12,7 @@ if (
 
 	$connection = Conexao::pegarConexao();
 
-	$query = $connection->query("Select idCliente FROM tbCliente where cpfCliente like '" . $_POST['txtCpf'] . "'");
+	$query = $connection->query("Select idCliente FROM tbcliente where cpfCliente like '" . $_POST['txtCpf'] . "'");
 
 	$idCliente = $query->fetchAll()[0][0];
 

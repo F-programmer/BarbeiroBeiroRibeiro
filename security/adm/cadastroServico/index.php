@@ -52,6 +52,7 @@ include_once('../../utils/sentinel.php');
         </div>
         <ul>
           <li><a href="./../home/index.php">Home</a></li>
+          <li><a href="../cadastroCliente/index.php">Cliente</a></li>
           <li class='active'><a href="../cadastroServico/index.php">Serviço</a></li>
           <li><a href="../cadastroImagen/index.php">Imagens</a></li>
           <li><a href="../../utils/logout.php">Sair</a></li>
