@@ -76,6 +76,6 @@ class Agendamento
 		$stmt->bindValue(4, $this->horarioAgendamento);
 
 		$stmt->execute();
-
+		
 	}
 }
