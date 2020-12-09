@@ -9,7 +9,8 @@ if (
 ) {
 
 	try{
-		$connection = Conexao::pegarConexao();
+	Header('Location: ./index.php');
+	$connection = Conexao::pegarConexao();
 
 	$query = $connection->query("Select idCliente FROM tbcliente where cpfCliente like '" . $_POST['txtCpf'] . "'");
 	
@@ -30,11 +31,11 @@ if (
 		$_POST['txtTime'],
 	);
 
-	echo $_POST['comboServico'];
+	
 	$agendamento->cadastrar();
+
 	}catch(Exception $e){
 		echo $e;
-
 	}
 	
 

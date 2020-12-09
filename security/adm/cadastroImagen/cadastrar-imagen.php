@@ -22,14 +22,12 @@ try {
 			$_FILES['inputFile']['tmp_name'],
 			'../../../' . $imagen->getUrl() . $imagen->getNome()
 		);
-		$state = $imagen->cadastrar($_POST['comboServico']);
+		$imagen->cadastrar($_POST['comboServico']);
+		$state = true;
 		echo '' . (boolval($state) ? 'true' : 'false');
 	}
 } catch (Exception $e) {
-	echo '<pre>';
-	print_r($e);
-	echo '</pre>';
-	echo $e->getMessage();
+	echo $e;
 	$state = false;
 }
 

@@ -36,16 +36,6 @@ require_once '../../security/utils/autoloaderGaleria.php';
 </head>
 
 <body>
-  <a id="demo01" href="#animatedModal"></a>
-
-  <div id="animatedModal">
-    <div id="btn-close-modal" class="close-animatedModal">
-      <label id="fechar-modal"><i class="fas fa-times-circle"></i></label>
-    </div>
-
-    <div id="modal" class="modal-content">
-    </div>
-  </div>
 
 
   <div class="splash-screen"></div>

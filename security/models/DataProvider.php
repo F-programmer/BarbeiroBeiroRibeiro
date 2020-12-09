@@ -3,7 +3,7 @@ class DataProvider {
 	// pegar todos os servico
 	public static function listarServicos() {
 		$connection = Conexao::pegarConexao();
-		$query = $connection->query("SELECT * FROM tbServico");
+		$query = $connection->query("SELECT * FROM tbservico");
 		$retorno = [];
 		if ($query->rowCount() > 0) {
 			foreach ($query->fetchAll() as &$line) {

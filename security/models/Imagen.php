@@ -44,7 +44,7 @@ class Imagen
 	{
 		$connection = Conexao::pegarConexao();
 		$stmt = $connection->prepare(
-			"INSERT INTO tbImagens (nomeImagem, urlImagem, descImagem)
+			"INSERT INTO tbimagens (nomeImagem, urlImagem, descImagem)
 			VALUES(?, ?, ?)
 		"
 		);
@@ -60,11 +60,11 @@ class Imagen
 	{
 		// pegando o ultimo item cadastrado
 		$connection = Conexao::pegarConexao();
-		$lastIdServico = $connection->query("SELECT MAX(idImagem) FROM tbImagens");
+		$lastIdServico = $connection->query("SELECT MAX(idImagem) FROM tbimagens");
 		$item = $lastIdServico->fetchAll();
 
 		$stmt = $connection->prepare(
-			"INSERT INTO tbServicoImagen(idServico, idImagem)
+			"INSERT INTO tbservicoimagen(idServico, idImagem)
 			VALUES(?, ?)
 		");
 		$stmt->bindValue(1, $idServico);

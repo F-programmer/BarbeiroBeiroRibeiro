@@ -96,7 +96,7 @@ require_once '../../utils/autoloader.php';
               <?php
 							$dadosServicos = DataProvider::listarServicos();
 							if (count($dadosServicos) == 0) {
-								echo ('<script>
+								echo '<script>
 									$("#modal").append(
 										"<h3>Não há serviços cadastrados!</h3>"
 									);
@@ -107,11 +107,13 @@ require_once '../../utils/autoloader.php';
 									const delay = setTimeout(() => {
 										window.location.href = "../cadastroServico/index.php";
 									}, 4000);
-								</script>');
-							}
+								</script>';
+							}else{
 							array_map(function ($item) {
 								echo '<option value="' . $item[0] . '">' . $item[1] . '</option>';
-							}, $dadosServicos);
+              }, $dadosServicos);
+ 
+             }
 							?>
             </select>
           </fieldset>
