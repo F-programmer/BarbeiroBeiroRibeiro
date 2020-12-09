@@ -5,7 +5,7 @@ class Agendamento
 	private $idCliente;
 	private $idServico;
 	private $dtAgendamento;
-	private $valorAgendamento;
+	private $horarioAgendamento;
 
 	public function getIdCliente()
 	{
@@ -36,27 +36,28 @@ class Agendamento
 	{
 		$this->dtAgendamento = $dtAgendamento;
 	}
-
-	public function getValorAgendamento()
+	
+	public function getHorarioAgendamento()
 	{
-		return $this->valorAgendamento;
+		return $this->horarioAgendamento;
 	}
 
-	public function setValorAgendamento($valorAgendamento)
+	public function setHorarioAgendamento($horarioAgendamento)
 	{
-		$this->valorAgendamento = $valorAgendamento;
+		$this->horarioAgendamento = $horarioAgendamento;
 	}
+
 
 	public function __construct(
 		$idCliente,
 		$idServico,
 		$dtAgendamento,
-		$valorAgendamento
+		$horarioAgendamento
 	) {
 		$this->idCliente = $idCliente;
 		$this->idServico = $idServico;
 		$this->dtAgendamento = $dtAgendamento;
-		$this->valorAgendamento = $valorAgendamento;
+		$this->horarioAgendamento = $horarioAgendamento;
 	}
 
 	public function cadastrar()
@@ -64,7 +65,7 @@ class Agendamento
 		$conexao = Conexao::pegarConexao();
 
 		$stmt = $conexao->prepare(
-			"INSERT INTO tbagendamento (idCliente, idServico, dtAgendamento, valorAgendamento)
+			"INSERT INTO tbagendamento (idCliente, idServico, dtAgendamento,horarioAgendamento)
 			VALUES(?,?,?,?)
 			"
 		);
@@ -72,10 +73,9 @@ class Agendamento
 		$stmt->bindValue(1, $this->idCliente);
 		$stmt->bindValue(2, $this->idServico);
 		$stmt->bindValue(3, $this->dtAgendamento);
-		$stmt->bindValue(4, $this->valorAgendamento);
+		$stmt->bindValue(4, $this->horarioAgendamento);
 
-		$results = $stmt->execute();
+		$stmt->execute();
 
-		return $results == 1 ? true : false;
 	}
 }

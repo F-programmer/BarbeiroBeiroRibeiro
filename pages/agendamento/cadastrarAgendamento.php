@@ -14,21 +14,27 @@ if (
 	$query = $connection->query("Select idCliente FROM tbcliente where cpfCliente like '" . $_POST['txtCpf'] . "'");
 	
 
-	$query = $query->fetchAll();
-	$idCliente =(int) $query;
+	$resultList = $query->fetchAll(); 
+	$idCliente = null;
+	
+	foreach ( $resultList as &$item) {
+			
+		$idCliente = $item['idCliente'];
+	}
+	
 
 	$agendamento = new Agendamento(
 		$idCliente,
+		$_POST['comboServico'],
 		$_POST['txtDate'],
 		$_POST['txtTime'],
-		$_POST['comboServico']
 	);
 
 	echo $_POST['comboServico'];
 	$agendamento->cadastrar();
 	}catch(Exception $e){
 		echo $e;
-		echo $idCliente;
+
 	}
 	
 

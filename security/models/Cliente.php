@@ -71,6 +71,8 @@ class Cliente
 		$this->foneCliente = $foneCliente;
 	}
 
+	
+
 	public function cadastrar()
 	{
 		$connection = Conexao::pegarConexao();

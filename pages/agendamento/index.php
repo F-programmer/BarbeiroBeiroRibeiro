@@ -98,11 +98,12 @@ require_once '../../security/utils/autoloaderGaleria.php';
 							?>
             </select>
           </fieldset>
-
-          <fieldset class="price" id="price">
+          
+          <!-- <fieldset class="price" id="price">
             <label>Valor: </label>
             <label id="randonValue"></label>
-          </fieldset>
+            <input type="text" id="txtCpf" name="txtCpf" placeholder=">
+          </fieldset> -->
 
           <div id="initial-btns" class="btn">
             <button class="rotate" type="reset"><i class="fas fa-arrow-circle-right"></i></button>

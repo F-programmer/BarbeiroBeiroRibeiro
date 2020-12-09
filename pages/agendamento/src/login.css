@@ -140,17 +140,17 @@ main #login form .field-inline fieldset {
 	display: none;
 }
 
-.show {
+/* .show {
 	display: flex;
-}
+} */
 
-.price {
+/* .price {
 	display: none !important;
 }
 
 .show-price {
 	display: flex;
-}
+} */
 
 @keyframes no-no {
 	0% {

@@ -70,6 +70,7 @@ require_once '../../utils/autoloader.php';
           <li><a href="../cadastroCliente/index.php">Cliente</a></li>
           <li><a href="../cadastroServico/index.php">Serviço</a></li>
           <li class='active'><a href="../cadastroImagen/index.php">Imagens</a></li>
+
           <li><a href="../../utils/logout.php">Sair</a></li>
         </ul>
       </nav>
