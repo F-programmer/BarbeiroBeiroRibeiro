@@ -9,7 +9,7 @@ if (
 ) {
 
 	try{
-	Header('Location: ./index.php');
+	Header('Location: ./index.php ');
 	$connection = Conexao::pegarConexao();
 
 	$query = $connection->query("Select idCliente FROM tbcliente where cpfCliente like '" . $_POST['txtCpf'] . "'");
