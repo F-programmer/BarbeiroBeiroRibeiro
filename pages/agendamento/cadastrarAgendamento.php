@@ -1,7 +1,5 @@
 <?php
-
-require_once '../../security/models/Conexao.php';
-require_once '../../security/models/Agendamento.php';
+require_once '../../security/utils/autoloaderGaleria.php';
 
 if (
 	isset($_POST['txtCpf']) &&
@@ -10,11 +8,14 @@ if (
 	isset($_POST['comboServico'])
 ) {
 
-	$connection = Conexao::pegarConexao();
+	try{
+		$connection = Conexao::pegarConexao();
 
 	$query = $connection->query("Select idCliente FROM tbcliente where cpfCliente like '" . $_POST['txtCpf'] . "'");
+	
 
-	$idCliente = $query->fetchAll()[0][0];
+	$query = $query->fetchAll();
+	$idCliente =(int) $query;
 
 	$agendamento = new Agendamento(
 		$idCliente,
@@ -24,6 +25,12 @@ if (
 	);
 
 	echo $_POST['comboServico'];
+	$agendamento->cadastrar();
+	}catch(Exception $e){
+		echo $e;
+		echo $idCliente;
+	}
+	
 
-	// $agendamento->cadastrar();
+	
 }

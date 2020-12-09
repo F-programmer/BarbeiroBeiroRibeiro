@@ -1,6 +1,5 @@
 <?php
-require_once '../../security/models/DataProvider.php';
-require_once '../../security/models/Conexao.php';
+require_once '../../security/utils/autoloaderGaleria.php';
 
 ?>
 
