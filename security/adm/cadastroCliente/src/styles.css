@@ -162,3 +162,10 @@ main #cadastro form fieldset input:focus::placeholder {
 	content: "\f070";
 	font-family: FontAwesome;
 }
+
+@media screen and (max-width: 1000px){
+    main #cadastro{
+        width: 90%;
+        margin-left: 3%;
+    }
+}
